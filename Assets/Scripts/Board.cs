@@ -131,7 +131,8 @@ public class Board : MonoBehaviour
     /// <param name="obj"></param>
     private void InitObject(ObjProps obj)
     {
-        int rnd = Random.Range(0, color.Length);
+        int indexOfComplexity = gameConroller.ReturnIndexOfComplexity();
+        int rnd = Random.Range(0, color.Length - indexOfComplexity);
         obj.Id = rnd;
         obj.sprite.color = color[rnd];
     }
@@ -370,25 +371,4 @@ public class Board : MonoBehaviour
         }
                   
     }
-
-    // позже удалить - это тест уничтожения
-    public void TestDestroy()
-    {
-        DeleteObject(destroyObj);        
-        destroyObj.Clear();
-    }
-
-    // позже удалить - это тест массива (искал ошибку, чтобы устранить ее)
-    public void CheckArray()
-    {
-        text.text = "";
-        for (int i = height - 1; i >= 0; i--)
-        {
-            for (int j = 0; j < width; j++)
-            {
-                text.text += ("[" + j + "," + i + "] = " + allObj[j,i].name + ";");
-            }
-            text.text += "\r\n";
-        }
-    }    
 }

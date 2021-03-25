@@ -29,7 +29,7 @@ public class GameConroller : MonoBehaviour
 
         Debug.Log(PlayerPrefs.GetInt("MinRecord") + "&" + minRecord);
 
-        Turns = 10;
+        Turns = 3;
         Scores = 0;
         turnsText.text = Turns.ToString();
         scoresText.text = Scores.ToString();
@@ -104,5 +104,31 @@ public class GameConroller : MonoBehaviour
     {
         Time.timeScale = 1;
         board.isPaused = false;
+    }
+
+    public int ReturnIndexOfComplexity()
+    {
+        if (Scores < 20)
+            return 10;
+        else if (Scores < 50)
+            return 9;
+        else if (Scores < 70)
+            return 8;
+        else if (Scores < 90)
+            return 7;
+        else if (Scores < 110)
+            return 6;
+        else if (Scores < 130)
+            return 5;
+        else if (Scores < 150)
+            return 4;
+        else if (Scores < 170)
+            return 3;
+        else if (Scores < 190)
+            return 2;
+        else if (Scores < 210)
+            return 1;
+        else
+            return 0;
     }
 }
