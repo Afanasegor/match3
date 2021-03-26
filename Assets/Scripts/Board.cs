@@ -351,7 +351,6 @@ public class Board : MonoBehaviour
             j = -1;
         }
         
-        Debug.Log(destroyObj.Count);
         if (destroyObj.Count > 0)
         {
             targetForHand = destroyObj[0].transform.position;

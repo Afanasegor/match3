@@ -17,9 +17,14 @@ public class GameConroller : MonoBehaviour
     private int Scores { get; set; }
     private int indexOfScore = 1;
     private int minRecord;
-    
+
+    // comlexity
+    private int complexity = 10;
+    private int complexityStep = 25;
+
+
     private void Start()
-    {
+    {       
         minRecord = 0;
         if (!PlayerPrefs.HasKey("MinRecord"))
         {
@@ -27,12 +32,11 @@ public class GameConroller : MonoBehaviour
         }
         minRecord = PlayerPrefs.GetInt("MinRecord");
 
-        Debug.Log(PlayerPrefs.GetInt("MinRecord") + "&" + minRecord);
-
         Turns = 3;
         Scores = 0;
         turnsText.text = Turns.ToString();
         scoresText.text = Scores.ToString();
+        AdsController.InitializeAdvertisment();
     }
 
     public void PlusTurns(int number)
@@ -73,18 +77,18 @@ public class GameConroller : MonoBehaviour
         if (Scores > minRecord)
         {
             yield return new WaitForSeconds(0.5f);
-            Debug.Log("Переход на другую сцену");
+            AdsController.ShowAdvertisment();
             PlayerPrefs.SetInt("NewRecord", Scores);
             PlayerPrefs.Save();
             SceneManager.LoadScene(2);
         }
         else
         {
+            AdsController.ShowAdvertisment();
             losePanel.SetActive(true);
             losePanelScoresText.text = scoresText.text;
             uIPanels.SetActive(false);
             yield return new WaitForSeconds(0.7f);
-            Debug.Log("U have lost!");
         }
     }
 
@@ -108,27 +112,33 @@ public class GameConroller : MonoBehaviour
 
     public int ReturnIndexOfComplexity()
     {
-        if (Scores < 20)
-            return 10;
-        else if (Scores < 50)
-            return 9;
-        else if (Scores < 70)
-            return 8;
-        else if (Scores < 90)
-            return 7;
-        else if (Scores < 110)
-            return 6;
-        else if (Scores < 130)
-            return 5;
-        else if (Scores < 150)
-            return 4;
-        else if (Scores < 170)
-            return 3;
-        else if (Scores < 190)
-            return 2;
-        else if (Scores < 210)
-            return 1;
+        int index = complexity - (Scores/complexityStep - Scores/complexityStep % 1);
+        if (index > 0)
+            return index;
         else
-            return 0;
+            return 0;        
+
+        //if (Scores < 25)
+        //    return 10;
+        //else if (Scores < 50)
+        //    return 9;
+        //else if (Scores < 75)
+        //    return 8;
+        //else if (Scores < 100)
+        //    return 7;
+        //else if (Scores < 125)
+        //    return 6;
+        //else if (Scores < 150)
+        //    return 5;
+        //else if (Scores < 175)
+        //    return 4;
+        //else if (Scores < 200)
+        //    return 3;
+        //else if (Scores < 225)
+        //    return 2;
+        //else if (Scores < 250)
+        //    return 1;
+        //else
+        //    return 0;
     }
 }

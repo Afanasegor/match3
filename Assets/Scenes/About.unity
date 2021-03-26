@@ -552,7 +552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 272.7, y: -272.7}
+  m_AnchoredPosition: {x: 272.69995, y: -272.69995}
   m_SizeDelta: {x: 345.4, y: 345.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1262221626
@@ -900,7 +900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -76}
   m_SizeDelta: {x: 1487.4, y: 1462.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1881779048
@@ -936,17 +936,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0418\u0433\u0440\u0430 \"Time Bomb\" - \u0441\u043E\u0431\u0438\u0440\u0430\u0439
-    \u0431\u043E\u043C\u0431\u044B 3 \u0438\u043B\u0438 \u0431\u043E\u043B\u0435\u0435
-    \u0432 \u0440\u044F\u0434, \u0447\u0442\u043E\u0431\u044B \u043F\u043E\u043B\u0443\u0447\u0430\u0442\u044C
-    \u043E\u0447\u043A\u0438 \u0445\u043E\u0434\u043E\u0432.\n\n\u0415\u0441\u043B\u0438
-    \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0445\u043E\u0434\u043E\u0432
-    \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u0441\u044F - \u0442\u044B \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u043B.\n\n\u0422\u0430\u043A\u0436\u0435
-    \u0442\u044B \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0448\u044C \u0434\u043E\u043F.
-    \u043E\u0447\u043A\u0438. \u041D\u0430\u0431\u0435\u0440\u0438 \u043A\u0430\u043A
-    \u043C\u043E\u0436\u043D\u043E \u0431\u043E\u043B\u044C\u0448\u0435, \u0447\u0442\u043E\u0431\u044B
-    \u0431\u044B\u0442\u044C \u043D\u0430 \u043F\u0435\u0440\u0432\u043E\u043C \u043C\u0435\u0441\u0442\u0435
-    \u0432 \u0442\u0430\u0431\u043B\u0438\u0446\u0435 \u0440\u0435\u043A\u043E\u0440\u0434\u043E\u0432)))"
+  m_Text: 'Time Bomb game - Collect 3 or more bombs in a row to get turn points.
+
+
+    If
+    the number of moves ends, you have lost.
+
+
+    You also get extra scores for
+    bomb explosion. Score as much as possible to be in the first place in the table
+    of records!'
 --- !u!222 &1881779049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1076,7 +1075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1978705045
 RectTransform:
   m_ObjectHideFlags: 0
